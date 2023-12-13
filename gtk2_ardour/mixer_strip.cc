@@ -1922,6 +1922,8 @@ MixerStrip::update_sensitivity ()
 	update_phase_invert_sensitivty ();
 	map_frozen ();
 	set_button_names (); // update solo button visual state
+
+	gpm.hide ();
 }
 
 void
