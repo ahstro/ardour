@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArdourMIDIBindings version="1.0.0" name="M-Audio Keystation Mini 32 Mk3">
+  <!-- Volume knob -->
+  <Binding channel="1" ctl="7" uri="/route/gain S1"/>
+</ArdourMIDIBindings>
