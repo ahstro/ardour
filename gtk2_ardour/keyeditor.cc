@@ -510,22 +510,19 @@ KeyEditor::Tab::visible_func(const Gtk::TreeModel::const_iterator& iter) const
 		return false;
 	}
 
-	if (owner.filter_string.find ("k:") == string::npos) {
-		// search name
-		std::string name = (*iter)[columns.name];
-		boost::to_lower (name);
-		if (name.find (owner.filter_string) != std::string::npos) {
-			return true;
-		}
-	} else {
-		string s = owner.filter_string.substr (2);
-		// search binding
-		std::string binding = (*iter)[columns.binding];
-		boost::to_lower (binding);
-		if (binding.find (s) != std::string::npos) {
-			return true;
-		}
-	}
+  // search name
+  std::string name = (*iter)[columns.name];
+  boost::to_lower (name);
+  if (name.find (owner.filter_string) != std::string::npos) {
+    return true;
+  }
+
+  // search binding
+  std::string binding = (*iter)[columns.binding];
+  boost::to_lower (binding);
+  if (binding.find (owner.filter_string) != std::string::npos) {
+    return true;
+  }
 
 	return false;
 }
